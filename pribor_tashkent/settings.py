@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['api.pribortashkent.uz', 'localhost', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -166,6 +167,29 @@ TINYMCE_DEFAULT_CONFIG = {
         {"text": "CSS", "value": "css"},
     ],
     "language": "ru",
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "pulse",
+}
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Pribor tashkent Admin",
+    "site_header": "Pribor tashkent",
+    "site_brand": "Pribor tashkent",
+
+
+    "login_logo": None,
+
+
+    "login_logo_dark": None,
+
+    "site_icon": None,
+
+    "welcome_sign": "Pribor tashkent admin",
+    "copyright": "Pribor tashkent Ltd",
+    "order_with_respect_to": ["courses",'categories', "teachers"],
 }
 
 SPECTACULAR_SETTINGS = {
