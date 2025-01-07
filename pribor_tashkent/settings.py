@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['api.pribortashkent.uz', 'localhost', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,28 +134,6 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-JAZZMIN_UI_TWEAKS = {
-    "theme": "pulse",
-}
-
-
-JAZZMIN_SETTINGS = {
-    "site_title": "Tashkent Pribor Admin",
-    "site_header": "Tashkent Pribor",
-    "site_brand": "Tashkent Pribor",
-
-
-    "login_logo": None,
-
-
-    "login_logo_dark": None,
-
-    "site_icon": None,
-
-    "welcome_sign": "Tashkent Pribor Admin",
-    "copyright": "Tashkent Pribor Ltd",
-    "order_with_respect_to": ["maps_app"],
-}
 
 TINYMCE_DEFAULT_CONFIG = {
     "height": 600,  # Высота редактора
