@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-_s@f$)36h9x((t^5(%%8m5f40$2$e^p--q$i$83h^#f+ihm1=1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['api.pribortashkent.uz', 'pribortashkent.uz', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['api.pribortashkent.uz', 'localhost', '0.0.0.0']
 
 
 # Application definition
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'pribor_tashkent.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -202,3 +203,10 @@ SPECTACULAR_SETTINGS = {
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://api.pribortashkent.uz'
+]
