@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    container_name: pribor_web
+    restart: always
+    command: bash entrypoint.sh
+    volumes:
+      - .:/var/www/app
+      - ./static:/var/www/app/static
+      - ./media:/var/www/app/media
+    ports:
+      - 8000:8000
