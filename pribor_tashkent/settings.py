@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_s@f$)36h9x((t^5(%%8m5f40$2$e^p--q$i$83h^#f+ihm1=1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['api.pribortashkent.uz', 'pribortashkent.uz', 'localhost', '0.0.0.0']
 
