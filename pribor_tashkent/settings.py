@@ -123,10 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/app/static/'  # Должно совпадать с конфигурацией в Nginx
+STATIC_ROOT = BASE_DIR / 'static/'
 
+MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/app/media/'
 
 
 # Default primary key field type

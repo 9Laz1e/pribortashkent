@@ -8,5 +8,6 @@ services:
       - .:/var/www/app
       - ./static:/var/www/app/static
       - ./media:/var/www/app/media
+
     ports:
       - 8000:8000
