@@ -17,7 +17,7 @@ class Product(models.Model):
     name = models.CharField(max_length=128, null=True, blank=True, verbose_name='Название товара')
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение товара')
     description = HTMLField(null=True, blank=True, verbose_name='Описание товара')
-    cost = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True, verbose_name='Цена товара')
+    cost = models.IntegerField( null=True, blank=True, verbose_name='Цена товара')
 
     def __str__(self):
         return self.name
