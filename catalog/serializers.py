@@ -7,10 +7,10 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 class ProductSerializer(serializers.ModelSerializer):
-    category_name = CategorySerializer()  # Вложенный сериализатор для отображения объекта категории
+    category = CategorySerializer()  # Вложенный сериализатор для отображения объекта категории
 
     class Meta:
         model = Product
-        fields = ['id', 'category_name', 'name', 'image', 'description', 'cost']
+        fields = ['id', 'category', 'name', 'image', 'description', 'cost']
 
 
