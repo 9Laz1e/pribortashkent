@@ -19,10 +19,20 @@ class CategoryView(APIView):
 class ProductView(APIView):
     serializer_class = ProductSerializer
 
-    def get(self, request, *args, **kwargs):
-        products = Product.objects.all()
-        serializer = ProductSerializer(products, context={'request':request}, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get(self, request, product_id=None, *args, **kwargs):
+        if product_id:
+            try:
+                product = Product.objects.get(id=product_id)
+                serializer = ProductSerializer(product, context={'request':request})
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except Product.DoesNotExist:
+                return Response({'error': 'Course not found'}, status=status.HTTP_404_NOT_FOUND)
+        else:
+            # Если course_id не указан, возвращаем полный список курсов
+            products = Product.objects.all()
+            serializer = ProductSerializer(products, many=True, context={'request': request})
+            return Response(serializer.data, status=status.HTTP_200_OK)
+            
     
 
 
